@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.SimpleCursorAdapter;
 
 import androidx.annotation.Nullable;
 /*
@@ -39,6 +40,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+
+
     // New method for inserting data https://www.youtube.com/watch?v=T0ClYrJukPA
 
     public boolean InsertUser(String name, String surname, String email, String password) {
@@ -72,10 +75,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //    }
 //
 //    //Function to delete user - https://www.youtube.com/watch?v=neaCUaHa2Ek
-//    public Integer deleteUser(String id) {
-//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-//        return sqLiteDatabase.delete(TABLE_NAME, "ID = ?", new String[] {id});
-//    }
+    public Integer deleteUser(String id) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        return sqLiteDatabase.delete(TABLE_NAME, "ID = ?", new String[] {id});
+    }
 //
 //    //Function to view all users
 //    public Cursor getAllData() {

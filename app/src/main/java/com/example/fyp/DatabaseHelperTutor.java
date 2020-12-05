@@ -2,10 +2,15 @@ package com.example.fyp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import com.example.fyp.Model.Tutor;
+
+import java.util.ArrayList;
 
 public class DatabaseHelperTutor extends SQLiteOpenHelper {
 
@@ -39,17 +44,42 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
     public boolean InsertTutor(String prefix, String name, String surname, String email, String password, String subject) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2,prefix);
-        contentValues.put(COL_3,name);
-        contentValues.put(COL_4,surname);
-        contentValues.put(COL_5,email);
-        contentValues.put(COL_6,password);
-        contentValues.put(COL_7,subject);
-        long result = sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
+        contentValues.put(COL_2, prefix);
+        contentValues.put(COL_3, name);
+        contentValues.put(COL_4, surname);
+        contentValues.put(COL_5, email);
+        contentValues.put(COL_6, password);
+        contentValues.put(COL_7, subject);
+        long result = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
         // an error returns -1
         if (result == -1)
             return false;
         else
             return true;
+    }
+    //Function to delete tutor - https://www.youtube.com/watch?v=neaCUaHa2Ek
+//    public Integer deleteTutor(String id) {
+//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+//        return sqLiteDatabase.delete(TABLE_NAME, "ID = ?", new String[] {id});
+//    }
+
+    public ArrayList<Tutor> getAllData() {
+
+
+        ArrayList<Tutor> arrayList = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT prefix, name, surname FROM tutor_table", null);
+
+        while (cursor.moveToNext()) {
+            String prefix = cursor.getString(0);
+            String name = cursor.getString(1);
+            String surname = cursor.getString(2);
+            Tutor tutor = new Tutor(prefix, name, surname);
+
+            arrayList.add(tutor);
+
+        }
+        return arrayList;
+
     }
 }

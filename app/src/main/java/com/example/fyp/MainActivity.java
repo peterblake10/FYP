@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper myDb;
     //Creating variables for text and button for entering records into database https://www.youtube.com/watch?v=T0ClYrJukPA
-    EditText editName, editSurname, editEmail, editPassword, editConfirmPassword;
+    EditText editName, editSurname, editEmail, editPassword, editId, editConfirmPassword;
     Button btnAddUser;
     Button btnViewUpdate;
     Button btnDelete;
@@ -30,18 +30,19 @@ public class MainActivity extends AppCompatActivity {
         editSurname = (EditText) findViewById(R.id.txtSurname);
         editEmail = (EditText) findViewById(R.id.txtEmail);
         editPassword = (EditText) findViewById(R.id.txtPassword);
+        editId = (EditText) findViewById(R.id.txtID);
        // editConfirmPassword = (EditText) findViewById(R.id.txtConfirmPassword);
         btnAddUser = (Button) findViewById(R.id.btnAddUser);
         btnBack = (Button) findViewById(R.id.btnBack);
 //        btnViewUpdate = (Button)findViewById(R.id.button_update);
-//        btnDelete = (Button)findViewById(R.id.button_delete);
+//        btnDelete = (Button)findViewById(R.id.btnDelete);
 //        btnView = (Button)findViewById(R.id.button_View);
         //Call Add User method
         AddUser();
         Back();
 //        //Call update user method
 //        UpdateUser();
-//        //Call delete user method
+       //Call delete user method
 //        DeleteUser();
         //Call view users method
 //        ViewUsers();
