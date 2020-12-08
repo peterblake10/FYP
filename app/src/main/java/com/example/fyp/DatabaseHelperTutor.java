@@ -63,18 +63,28 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
 //        return sqLiteDatabase.delete(TABLE_NAME, "ID = ?", new String[] {id});
 //    }
 
+
+
+
+
+
+
+
+
+
     public ArrayList<Tutor> getAllData() {
 
 
         ArrayList<Tutor> arrayList = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT prefix, name, surname FROM tutor_table", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT prefix, name, surname, subject FROM " + TABLE_NAME, null);
 
         while (cursor.moveToNext()) {
             String prefix = cursor.getString(0);
             String name = cursor.getString(1);
             String surname = cursor.getString(2);
-            Tutor tutor = new Tutor(prefix, name, surname);
+            String subject = cursor.getString(3);
+            Tutor tutor = new Tutor(prefix, name, surname, subject);
 
             arrayList.add(tutor);
 
