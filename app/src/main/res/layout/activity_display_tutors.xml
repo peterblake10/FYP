@@ -17,4 +17,16 @@
 
 
     </ListView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="550dp"
+        app:itemBackground="@color/design_default_color_background"
+
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

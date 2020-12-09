@@ -12,9 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FYP">
         <activity
+            android:name=".Profile"
+            android:exported="true"></activity>
+        <activity
+            android:name=".FindATutor"
+            android:exported="true"/>
+        <activity
+            android:name=".LearningHub"
+            android:exported="true"/>
+        <activity
             android:name=".DisplayTutors"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".TutorForms"
             android:exported="true" />

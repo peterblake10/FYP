@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+//Page for selecting Student registration or Tutor registration
+
 public class Register extends AppCompatActivity {
 
     private Button btnStudentReg;
@@ -24,6 +26,8 @@ public class Register extends AppCompatActivity {
         StudentReg();
         TutorReg();
     }
+
+    //When student registration button is clicked, bring to student registration page.
     public void StudentReg() {
 
         btnStudentReg.setOnClickListener(
@@ -39,6 +43,8 @@ public class Register extends AppCompatActivity {
         );
 
     }
+
+    //When tutor registration button is clicked, bring to tutor registration page.
     public void TutorReg() {
 
         btnTutorReg.setOnClickListener(

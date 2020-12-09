@@ -1,5 +1,7 @@
 package com.example.fyp.Model;
 
+// Video showing me how to display database records in a listview - https://youtu.be/6q4-Ge0UMKY
+
 public class Tutor {
 
     String prefix, name, surname, subject;

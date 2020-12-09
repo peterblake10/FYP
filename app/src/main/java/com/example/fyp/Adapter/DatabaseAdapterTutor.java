@@ -12,6 +12,8 @@ import com.example.fyp.R;
 
 import java.util.ArrayList;
 
+// Video showing me how to display database records in a listview - https://youtu.be/6q4-Ge0UMKY
+
 public class DatabaseAdapterTutor extends BaseAdapter {
 
     Context context;
