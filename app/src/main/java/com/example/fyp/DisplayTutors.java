@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.fyp.Adapter.DatabaseAdapterTutor;
@@ -32,8 +34,26 @@ public class DisplayTutors extends AppCompatActivity {
         arrayList = new ArrayList<>();
         loadDataInListView();
 
-        // Linking activities to buttons on bottom nav bar - https://www.youtube.com/watch?v=WOuoolvuvnM
+        //Make listview clickable - https://www.youtube.com/watch?v=KvpulitmjbM&pbjreload=101https://www.youtube.com/watch?v=KvpulitmjbM&pbjreload=101
+        lstTutor.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            //Selecting a tutor's profile
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position ==0) {
+                    Intent intent = new Intent(view.getContext(), EoinHurley.class);
+                    startActivity(intent);
+                } else
+                if (position ==1) {
+                    Intent intent = new Intent(view.getContext(), ColmDineen.class);
+                    startActivity(intent);
+                }
 
+            }
+        });
+
+
+
+        // Linking activities to buttons on bottom nav bar - https://www.youtube.com/watch?v=WOuoolvuvnM
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation);
         bottomNavigationView.setSelectedItemId(R.id.LearningHub);
         bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {

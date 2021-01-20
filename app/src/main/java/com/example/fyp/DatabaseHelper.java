@@ -79,13 +79,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         return sqLiteDatabase.delete(TABLE_NAME, "ID = ?", new String[] {id});
     }
+
+
 //
 //    //Function to view all users
-//    public Cursor getAllData() {
-//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-//        Cursor res = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME, null);
-//        return res;
-//
-//    }
+    public Cursor getAllData() {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor res = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME, null);
+        return res;
+
+    }
 
 }

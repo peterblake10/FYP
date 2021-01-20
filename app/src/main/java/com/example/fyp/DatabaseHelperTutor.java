@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 
 import com.example.fyp.Model.Tutor;
 
+import java.sql.Blob;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class DatabaseHelperTutor extends SQLiteOpenHelper {
@@ -23,6 +25,7 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
     public static final String COL_5 = "EMAIL";
     public static final String COL_6 = "PASSWORD";
     public static final String COL_7 = "SUBJECT";
+    public static final String COL_8 = "BIO";
 
     public DatabaseHelperTutor(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -31,7 +34,7 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,PREFIX TEXT, NAME TEXT,SURNAME TEXT, EMAIL TEXT, PASSWORD TEXT, SUBJECT TEXT)");
+        sqLiteDatabase.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,PREFIX TEXT, NAME TEXT,SURNAME TEXT, EMAIL TEXT, PASSWORD TEXT, SUBJECT TEXT, BIO TEXT)");
 
     }
 
@@ -41,7 +44,7 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public boolean InsertTutor(String prefix, String name, String surname, String email, String password, String subject) {
+    public boolean InsertTutor(String prefix, String name, String surname, String email, String password, String subject, String bio) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, prefix);
@@ -50,6 +53,7 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
         contentValues.put(COL_5, email);
         contentValues.put(COL_6, password);
         contentValues.put(COL_7, subject);
+        contentValues.put(COL_8, bio);
         long result = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
         // an error returns -1
         if (result == -1)
@@ -64,13 +68,7 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
 //    }
 
 
-
-
-
-
-
-
-
+//Array to select the prefix, name, and subject to display in listview
 
     public ArrayList<Tutor> getAllData() {
 
@@ -92,4 +90,33 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
         return arrayList;
 
     }
+
+    //Display Eoin Hurley's name for teacher profile
+    public Cursor ViewEH() {
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME +  " WHERE surname = 'Hurley'", null);
+        return cursor;
+    }
+
+    //Display Eoin Hurley's bio for tutor profile
+    public Cursor ViewEHbio() {
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME +  " WHERE surname = 'Hurley'", null);
+        return cursor;
+    }
+
+    //Display Colm Dineen's name for teacher profile
+    public Cursor ViewCD() {
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME +  " WHERE surname = 'Dineen'", null);
+        return cursor;
+    }
+
+    //Display Colm Dineen's bio for tutor profile
+    public Cursor ViewCDbio() {
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME +  " WHERE surname = 'Dineen'", null);
+        return cursor;
+    }
 }
+

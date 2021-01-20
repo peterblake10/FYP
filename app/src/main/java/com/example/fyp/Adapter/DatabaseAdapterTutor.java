@@ -39,16 +39,14 @@ public class DatabaseAdapterTutor extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.mycustomlistview,null);
             TextView txtPrefix = (TextView)convertView.findViewById(R.id.txtPrefix);
-//            TextView txtFirstNameT = (TextView)convertView.findViewById(R.id.txtFirstNameT);
-//            TextView txtSurnameT = (TextView)convertView.findViewById(R.id.txtSurnameT);
+
             TextView txtSubject = (TextView)convertView.findViewById(R.id.txtSubject);
 
 
             Tutor tutor = arrayList.get(position);
 
             txtPrefix.setText(tutor.getPrefix() + " " +  tutor.getName() + " " + tutor.getSurname());
-//            txtFirstNameT.setText(tutor.getName());
-//            txtSurnameT.setText(tutor.getSurname());
+
             txtSubject.setText(tutor.getSubject());
 
         return convertView;

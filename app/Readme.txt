@@ -17,3 +17,5 @@ YouTube video showing me how to link an activity to a button click - https://you
 
 This video showed me how to show records in a database in a listview. I used this to display the tutors to students - https://youtu.be/6q4-Ge0UMKY
 I watched this video to learn how to commit my project to github - Video on how to set up github - https://www.youtube.com/watch?v=-dAr6VnmomM
+Video that showed me how to make the my listview clickable - https://www.youtube.com/watch?v=KvpulitmjbM&pbjreload=101
+Showed me how to use the WHERE clause to select values from just one row in my database - https://www.tutorialspoint.com/how-to-where-clause-in-android-sqlite

@@ -18,7 +18,7 @@ public class TutorRegistration extends AppCompatActivity {
 
 
     //Creating variables for text and button for entering records into database https://www.youtube.com/watch?v=T0ClYrJukPA
-    EditText editPrefix, editName, editSurname, editEmail, editPassword, editSubject, editId;
+    EditText editPrefix, editName, editSurname, editEmail, editPassword, editSubject, editId, editBio;
 
     Button btnAddTutor;
 //    Button btnDeleteTutor;
@@ -42,6 +42,7 @@ public class TutorRegistration extends AppCompatActivity {
         editPassword = (EditText) findViewById(R.id.txtPasswordT);
         editSubject = (EditText) findViewById(R.id.txtSubject);
         editId = (EditText) findViewById(R.id.txtID);
+        editBio = (EditText) findViewById(R.id.txtBio) ;
         btnAddTutor = (Button) findViewById(R.id.btnAddTutor);
 //        btnDeleteTutor = (Button) findViewById(R.id.btnDeleteTutor);
 
@@ -70,7 +71,8 @@ public class TutorRegistration extends AppCompatActivity {
                                 editSurname.getText().toString(),
                                 editEmail.getText().toString(),
                                 editPassword.getText().toString(),
-                                editSubject.getText().toString());
+                                editSubject.getText().toString(),
+                                editBio.getText().toString());
 
                         if (isInserted == true)
                             Toast.makeText(TutorRegistration.this, "Tutor Added", Toast.LENGTH_LONG).show();
