@@ -11,14 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FYP">
+        <activity android:name=".TutorQuestion"></activity>
+        <activity android:name=".StudentQuestion" />
+        <activity android:name=".LearningHubHome" />
+
         <activity
             android:name=".ColmDineen"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".EoinHurley"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity android:name=".TutorProfile" />
         <activity
             android:name=".Profile"

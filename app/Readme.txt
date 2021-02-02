@@ -19,3 +19,7 @@ This video showed me how to show records in a database in a listview. I used thi
 I watched this video to learn how to commit my project to github - Video on how to set up github - https://www.youtube.com/watch?v=-dAr6VnmomM
 Video that showed me how to make the my listview clickable - https://www.youtube.com/watch?v=KvpulitmjbM&pbjreload=101
 Showed me how to use the WHERE clause to select values from just one row in my database - https://www.tutorialspoint.com/how-to-where-clause-in-android-sqlite
+
+**ITERATION 3**
+
+Stack overflow forum on how to create a dialog box for when tuition has been requested - https://stackoverflow.com/questions/2115758/how-do-i-display-an-alert-dialog-on-android

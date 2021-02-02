@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.example.fyp.Model.Tutor;
 
+import java.sql.Array;
 import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -90,6 +91,35 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
         return arrayList;
 
     }
+
+    public ArrayList<Tutor> getMyTutors() {
+
+
+        ArrayList<Tutor> arrayList = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT prefix, name, surname, subject FROM " + TABLE_NAME, null);
+
+
+            while (cursor.moveToNext()) {
+                String prefix = cursor.getString(0);
+                String name = cursor.getString(1);
+                String surname = cursor.getString(2);
+                String subject = cursor.getString(3);
+                Tutor tutor = new Tutor(prefix, name, surname, subject);
+
+                arrayList.add(tutor);
+
+            }
+
+        return arrayList;
+
+    }
+
+
+
+
+
+
 
     //Display Eoin Hurley's name for teacher profile
     public Cursor ViewEH() {

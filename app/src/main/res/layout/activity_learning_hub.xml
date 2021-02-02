@@ -6,25 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".LearningHub">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Learning Hub"
-        android:gravity="center"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="80dp"
-        android:textSize="40dp"/>
+    <ListView
+        android:id="@+id/lstMyTutors"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="206dp"
+        tools:layout_editor_absoluteY="205dp" />
+
+
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/navigation"
-        app:itemBackground="@color/design_default_color_background"
+        android:layout_alignParentBottom="true"
 
+        android:layout_marginTop="550dp"
+        app:itemBackground="@color/design_default_color_background"
         app:itemTextColor="@drawable/selector"
-        app:menu="@menu/menu_button"
-        android:layout_alignParentBottom="true"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_button" />
+
+
+
+
+
+
+
+
+
+
 
 
 
