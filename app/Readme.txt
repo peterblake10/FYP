@@ -23,3 +23,7 @@ Showed me how to use the WHERE clause to select values from just one row in my d
 **ITERATION 3**
 
 Stack overflow forum on how to create a dialog box for when tuition has been requested - https://stackoverflow.com/questions/2115758/how-do-i-display-an-alert-dialog-on-android
+Stack overflow how to Display data from db in textview - https://stackoverflow.com/questions/14179148/display-data-from-database-into-textview
+Stack overflow on how to create a dialog box so tutors can answer student's questions - https://stackoverflow.com/questions/10903754/input-text-dialog-android
+Stack overflow on how to remove question from listview when answered -https://stackoverflow.com/questions/2558591/remove-listview-items-in-android
+YouTube video how to pass edittext from one activity to another - https://www.youtube.com/watch?v=ZKseZ1IK62c

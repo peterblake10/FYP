@@ -41,6 +41,7 @@ public class DatabaseAdapterTutor extends BaseAdapter {
 
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.mycustomlistview,null);
+
             TextView txtPrefix = (TextView)convertView.findViewById(R.id.txtPrefix);
 
             TextView txtSubject = (TextView)convertView.findViewById(R.id.txtSubject);

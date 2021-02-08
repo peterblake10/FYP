@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -31,6 +33,19 @@ public class LearningHub extends AppCompatActivity {
         DatabaseHelperTutor = new DatabaseHelperTutor(this);
         arrayList = new ArrayList<>();
         getMyTutors();
+
+        //Make listview clickable - https://www.youtube.com/watch?v=KvpulitmjbM&pbjreload=101https://www.youtube.com/watch?v=KvpulitmjbM&pbjreload=101
+        lstMyTutors.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            //Selecting a tutor's profile
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                    Intent intent = new Intent(view.getContext(), LearningHubHome.class);
+                    startActivity(intent);
+
+
+            }
+        });
 
 
         // Linking activities to buttons on bottom nav bar - https://www.youtube.com/watch?v=WOuoolvuvnM
