@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.fyp.Adapter.DatabaseAdapterTutor;
@@ -33,6 +34,10 @@ public class DisplayTutors extends AppCompatActivity {
         DatabaseHelperTutor = new DatabaseHelperTutor(this);
         arrayList = new ArrayList<>();
         loadDataInListView();
+
+
+
+
 
         //Make listview clickable - https://www.youtube.com/watch?v=KvpulitmjbM&pbjreload=101https://www.youtube.com/watch?v=KvpulitmjbM&pbjreload=101
         lstTutor.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -82,6 +87,9 @@ public class DisplayTutors extends AppCompatActivity {
 
     }
 
+
+
+    //FUNCTION TO POPULATE THE LISTVIEW - https://youtu.be/6q4-Ge0UMKY
     private void loadDataInListView() {
         arrayList = DatabaseHelperTutor.getAllData();
         DatabaseAdapterTutor = new DatabaseAdapterTutor(this,arrayList);

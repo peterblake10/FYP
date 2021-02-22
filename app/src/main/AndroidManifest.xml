@@ -11,9 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FYP">
-        <activity android:name=".StudentResources"></activity>
         <activity
-            android:name=".TutorQuestion"
+            android:name=".Tutor.TutorResources"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".Worksheets"
+            android:exported="true"/>
+        <activity
+            android:name=".StudentResources" />
+        <activity
+            android:name=".Tutor.TutorQuestion"
             android:exported="true" />
         <activity
             android:name=".StudentQuestion"

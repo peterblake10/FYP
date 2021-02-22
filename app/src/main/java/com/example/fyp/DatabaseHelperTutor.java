@@ -14,6 +14,7 @@ import java.sql.Array;
 import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.ArrayList;
+//Watched a YouTube video on how to create an SQLite Database - https://youtu.be/cp2rL3sAFmI
 
 public class DatabaseHelperTutor extends SQLiteOpenHelper {
 
@@ -69,7 +70,7 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
 //    }
 
 
-//Array to select the prefix, name, and subject to display in listview
+//Array to select the prefix, name, and subject to display in listview - https://youtu.be/6q4-Ge0UMKY
 
     public ArrayList<Tutor> getAllData() {
 
@@ -97,7 +98,7 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
 
         ArrayList<Tutor> arrayList = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT prefix, name, surname, subject FROM " + TABLE_NAME, null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT prefix, name, surname, subject FROM " + TABLE_NAME + " WHERE surname = 'Hurley'", null);
 
 
             while (cursor.moveToNext()) {
@@ -114,8 +115,6 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
         return arrayList;
 
     }
-
-
 
 
 

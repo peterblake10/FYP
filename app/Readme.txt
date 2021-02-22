@@ -27,3 +27,7 @@ Stack overflow how to Display data from db in textview - https://stackoverflow.c
 Stack overflow on how to create a dialog box so tutors can answer student's questions - https://stackoverflow.com/questions/10903754/input-text-dialog-android
 Stack overflow on how to remove question from listview when answered -https://stackoverflow.com/questions/2558591/remove-listview-items-in-android
 YouTube video how to pass edittext from one activity to another - https://www.youtube.com/watch?v=ZKseZ1IK62c
+Saving and retrieving images for resources, layout design - https://youtu.be/cemB28c1fyA
+Images for resources, getting image from device - https://youtu.be/9bUkyop6eMg
+How to save image to sqlite for resources - https://youtu.be/OBtEwSe4LEQ
+Retrieving image from sqlite for resources -https://youtu.be/OBtEwSe4LEQ
