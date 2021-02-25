@@ -36,3 +36,4 @@ Retrieving image from sqlite for resources -https://youtu.be/OBtEwSe4LEQ
 YouTube video for creating a login - https://www.youtube.com/watch?v=8obgNNlj3Eo&t=798s
 Stack overflow forum on how to change text in action bar - https://stackoverflow.com/questions/3438276/how-to-change-the-text-on-the-action-bar
 YouTube video on how to populate a spinner - https://www.youtube.com/watch?v=on_OrrX7Nw4
+YouTube video on session id's - https://www.youtube.com/watch?v=BXejFpaEwRc

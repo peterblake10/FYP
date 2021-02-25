@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnDelete;
     Button btnView;
     Button btnBack;
+    Button btnSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +34,13 @@ public class MainActivity extends AppCompatActivity {
        // editId = (EditText) findViewById(R.id.txtID);
        // editConfirmPassword = (EditText) findViewById(R.id.txtConfirmPassword);
         btnAddUser = (Button) findViewById(R.id.btnAddUser);
-        btnBack = (Button) findViewById(R.id.btnBack);
+        btnSignIn = (Button) findViewById(R.id.btnSignIn);
 //        btnViewUpdate = (Button)findViewById(R.id.button_update);
 //        btnDelete = (Button)findViewById(R.id.btnDelete);
 //        btnView = (Button)findViewById(R.id.button_View);
         //Call Add User method
         AddUser();
-        Back();
+        SignIn();
 //        //Call update user method
 //        UpdateUser();
        //Call delete user method
@@ -80,14 +81,14 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-    public void Back() {
+    public void SignIn() {
 
-        btnBack.setOnClickListener(
+        btnSignIn.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
-                        Intent intent = new Intent(MainActivity.this,Register.class);
+                        Intent intent = new Intent(MainActivity.this,StudentLogin.class);
                         startActivity(intent);
                     }
 

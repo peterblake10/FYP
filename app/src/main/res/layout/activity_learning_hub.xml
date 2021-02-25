@@ -6,7 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".LearningHub">
 
-
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/btnLogout"
+    android:onClick="logout"
+    android:text="Logout"/>
 
     <ListView
         android:id="@+id/lstMyTutors"

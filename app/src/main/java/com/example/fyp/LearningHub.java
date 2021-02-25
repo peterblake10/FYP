@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -24,6 +25,7 @@ public class LearningHub extends AppCompatActivity {
     DatabaseHelperTutor DatabaseHelperTutor;
     ArrayList<Tutor> arrayList;
     DatabaseAdapterTutor DatabaseAdapterTutor;
+    Button btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +95,20 @@ public class LearningHub extends AppCompatActivity {
         DatabaseAdapterTutor = new DatabaseAdapterTutor(this,arrayList);
         lstMyTutors.setAdapter(DatabaseAdapterTutor);
         DatabaseAdapterTutor.notifyDataSetChanged();
+    }
+
+    public void logout(View view) {
+        //this method will remove session and open login screen
+        SessionManagement sessionManagement = new SessionManagement(LearningHub.this);
+        sessionManagement.removeSession();
+
+        moveToLogin();
+    }
+
+    private void moveToLogin() {
+        Intent intent = new Intent(LearningHub.this, StudentLogin.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
 
