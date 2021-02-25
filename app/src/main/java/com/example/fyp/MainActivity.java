@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         editSurname = (EditText) findViewById(R.id.txtSurname);
         editEmail = (EditText) findViewById(R.id.txtEmail);
         editPassword = (EditText) findViewById(R.id.txtPassword);
-        editId = (EditText) findViewById(R.id.txtID);
+       // editId = (EditText) findViewById(R.id.txtID);
        // editConfirmPassword = (EditText) findViewById(R.id.txtConfirmPassword);
         btnAddUser = (Button) findViewById(R.id.btnAddUser);
         btnBack = (Button) findViewById(R.id.btnBack);
@@ -63,11 +63,15 @@ public class MainActivity extends AppCompatActivity {
                                     editEmail.getText().toString(),
                                     editPassword.getText().toString());
 
-                            if (isInserted == true)
+                            if (isInserted == true) {
+                                Intent intent = new Intent(MainActivity.this, StudentLogin.class);
                                 Toast.makeText(MainActivity.this, "User Added", Toast.LENGTH_LONG).show();
-                            else
-                                Toast.makeText(MainActivity.this, "User Not Added", Toast.LENGTH_LONG).show();
+                                startActivity(intent);
+                            }
 
+                            else {
+                                Toast.makeText(MainActivity.this, "User Not Added", Toast.LENGTH_LONG).show();
+                            }
 
                         }
 

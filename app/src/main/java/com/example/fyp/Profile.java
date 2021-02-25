@@ -14,6 +14,7 @@ public class Profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("My Profile");
         setContentView(R.layout.activity_profile);
 
         // Linking activities to buttons on bottom nav bar - https://www.youtube.com/watch?v=WOuoolvuvnM

@@ -11,16 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FYP">
+        <activity android:name=".ExamPapersMaths"></activity>
+        <activity
+            android:name=".StudentLogin"
+            android:exported="true"></activity>
         <activity
             android:name=".Tutor.TutorResources"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
-            android:name=".Worksheets"
-            android:exported="true"/>
-        <activity
-            android:name=".StudentResources" />
+            android:name=".WorksheetsMaths"
+            android:exported="true" />
+        <activity android:name=".StudentResources" />
         <activity
             android:name=".Tutor.TutorQuestion"
             android:exported="true" />

@@ -90,4 +90,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    //Check if login details are correct - https://www.youtube.com/watch?v=8obgNNlj3Eo&t=798s
+    public Boolean checkemail(String email) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME + " where email =?", new String[]{email});
+        if (cursor.getCount() > 0)
+        return true;
+else
+    return false;
+    }
+
+    public Boolean checkemailpassword(String email, String password) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME + " where email =? and password =?", new String[]{email,password});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
 }

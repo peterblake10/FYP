@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
 
+    DatabaseHelper myDb;
+
     private Button btnStudentReg;
     private Button btnTutorReg;
 

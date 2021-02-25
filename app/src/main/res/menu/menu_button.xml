@@ -3,15 +3,18 @@
 
     <item
         android:title="Find a Tutor"
+        android:icon="@drawable/findtutors_icon"
         android:id="@+id/FindaTutor" />
 
     <item
     android:title="Learning Hub"
+        android:icon="@drawable/learninghub_icon"
     android:id="@+id/LearningHub" />
 
 
 
     <item
         android:title="Profile"
+        android:icon="@drawable/profile_icon"
         android:id="@+id/Profile" />
 </menu>

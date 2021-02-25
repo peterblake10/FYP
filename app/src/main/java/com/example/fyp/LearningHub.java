@@ -28,7 +28,10 @@ public class LearningHub extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("My Tutors");
         setContentView(R.layout.activity_learning_hub);
+
+
 
 
         lstMyTutors = (ListView) findViewById(R.id.lstMyTutors);

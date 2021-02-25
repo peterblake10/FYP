@@ -14,6 +14,7 @@ public class FindATutor extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Find A Tutor");
         setContentView(R.layout.activity_find_a_tutor);
 
         // Linking activities to buttons on bottom nav bar - https://www.youtube.com/watch?v=WOuoolvuvnM

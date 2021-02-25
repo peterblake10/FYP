@@ -41,7 +41,7 @@ public class TutorRegistration extends AppCompatActivity {
         editEmail = (EditText) findViewById(R.id.txtEmailT);
         editPassword = (EditText) findViewById(R.id.txtPasswordT);
         editSubject = (EditText) findViewById(R.id.txtSubject);
-        editId = (EditText) findViewById(R.id.txtID);
+    //    editId = (EditText) findViewById(R.id.txtID);
         editBio = (EditText) findViewById(R.id.txtBio) ;
         btnAddTutor = (Button) findViewById(R.id.btnAddTutor);
 //        btnDeleteTutor = (Button) findViewById(R.id.btnDeleteTutor);

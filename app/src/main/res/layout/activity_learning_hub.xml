@@ -6,12 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".LearningHub">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MY TUTORS"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="25dp" />
+
 
     <ListView
         android:id="@+id/lstMyTutors"
