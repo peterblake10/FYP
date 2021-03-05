@@ -2,20 +2,29 @@ package com.example.fyp.Model;
 
 // Video showing me how to display database records in a listview - https://youtu.be/6q4-Ge0UMKY
 
+
+import android.graphics.Bitmap;
+
 public class Tutor {
 
-    String prefix, name, surname, subject;
+    String prefix;
+    String name;
+    String surname;
+    String subject;
+    Bitmap image;
 
-    public Tutor(String prefix, String name, String surname, String subject) {
+
+    public Tutor(String prefix, String name, String surname, String subject, Bitmap image) {
 
         this.prefix = prefix;
         this.name = name;
         this.surname = surname;
         this.subject = subject;
+        this.image = image;
 
     }
 
-    public Tutor(){}
+
 
 //    public int getId() {
 //        return id;
@@ -72,4 +81,13 @@ public class Tutor {
     public void setSubject(String subject) {
         this.subject = subject;
     }
+
+    public Bitmap getImage() {
+        return image;
+    }
+
+    public void setImage(Bitmap image) {
+        this.image = image;
+    }
+
 }

@@ -5,14 +5,15 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import androidx.annotation.Nullable;
 
 import com.example.fyp.Model.Tutor;
 
-import java.sql.Array;
+import java.io.ByteArrayOutputStream;
 import java.sql.Blob;
-import java.sql.SQLException;
 import java.util.ArrayList;
 //Watched a YouTube video on how to create an SQLite Database - https://youtu.be/cp2rL3sAFmI
 
@@ -28,15 +29,20 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
     public static final String COL_6 = "PASSWORD";
     public static final String COL_7 = "SUBJECT";
     public static final String COL_8 = "BIO";
+    public static final String COL_9 = "IMAGE";
+
+    private ByteArrayOutputStream objectByteArrayOutputStream;
+    private byte[] imageInBytes;
 
     public DatabaseHelperTutor(@Nullable Context context) {
-        super(context, DATABASE_NAME, null, 1);
+        super(context, DATABASE_NAME, null, 2);
 
     }
 
+
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,PREFIX TEXT, NAME TEXT,SURNAME TEXT, EMAIL TEXT, PASSWORD TEXT, SUBJECT TEXT, BIO TEXT)");
+        sqLiteDatabase.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,PREFIX TEXT, NAME TEXT,SURNAME TEXT, EMAIL TEXT, PASSWORD TEXT, SUBJECT TEXT, BIO TEXT, IMAGE BLOB)");
 
     }
 
@@ -46,8 +52,16 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public boolean InsertTutor(String prefix, String name, String surname, String email, String password, String subject, String bio) {
+    public boolean InsertTutor(String prefix, String name, String surname, String email, String password, String subject, String bio, Bitmap image) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        Bitmap imageToStoreBitmap= image;
+
+        objectByteArrayOutputStream=new ByteArrayOutputStream();
+        imageToStoreBitmap.compress(Bitmap.CompressFormat.JPEG,100,objectByteArrayOutputStream);
+
+        imageInBytes=objectByteArrayOutputStream.toByteArray();
+
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, prefix);
         contentValues.put(COL_3, name);
@@ -56,6 +70,8 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
         contentValues.put(COL_6, password);
         contentValues.put(COL_7, subject);
         contentValues.put(COL_8, bio);
+        contentValues.put(COL_9, imageInBytes);
+
         long result = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
         // an error returns -1
         if (result == -1)
@@ -72,19 +88,27 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
 
 //Array to select the prefix, name, and subject to display in listview - https://youtu.be/6q4-Ge0UMKY
 
+
+
+
+
     public ArrayList<Tutor> getAllData() {
 
 
         ArrayList<Tutor> arrayList = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT prefix, name, surname, subject FROM " + TABLE_NAME, null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT prefix, name, surname, subject, image FROM " + TABLE_NAME, null);
 
         while (cursor.moveToNext()) {
             String prefix = cursor.getString(0);
             String name = cursor.getString(1);
             String surname = cursor.getString(2);
             String subject = cursor.getString(3);
-            Tutor tutor = new Tutor(prefix, name, surname, subject);
+            byte[] image = cursor.getBlob(4);
+
+            Bitmap objectBitmap=BitmapFactory.decodeByteArray(image,0,image.length);
+
+            Tutor tutor = new Tutor(prefix, name, surname, subject, objectBitmap);
 
             arrayList.add(tutor);
 
@@ -98,7 +122,7 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
 
         ArrayList<Tutor> arrayList = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT prefix, name, surname, subject FROM " + TABLE_NAME + " WHERE surname = 'Hurley'", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT prefix, name, surname, subject, image FROM " + TABLE_NAME + " WHERE surname = 'Hurley'", null);
 
 
             while (cursor.moveToNext()) {
@@ -106,7 +130,11 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
                 String name = cursor.getString(1);
                 String surname = cursor.getString(2);
                 String subject = cursor.getString(3);
-                Tutor tutor = new Tutor(prefix, name, surname, subject);
+                byte[] image = cursor.getBlob(4);
+
+                Bitmap objectBitmap=BitmapFactory.decodeByteArray(image,0,image.length);
+
+                Tutor tutor = new Tutor(prefix, name, surname, subject, objectBitmap);
 
                 arrayList.add(tutor);
 
@@ -115,6 +143,7 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
         return arrayList;
 
     }
+
 
 
 

@@ -4,26 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LearningHub">
+    tools:context=".Profile">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profile"
-        android:gravity="center"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="80dp"
-        android:textSize="40dp"/>
+        android:text="MY PROFILE"
+        android:textSize="30dp"/>
+
+    <Button
+        android:id="@+id/btnEditDetails"
+        android:onClick="UpdateDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit My Details"
+        android:layout_marginTop="150dp"/>
+
+    <Button
+        android:id="@+id/btnCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnEditDetails"
+        android:text="My Calendar"/>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnCalendar"
+        android:layout_marginBottom="100dp"
+        android:text="LogOut"/>
+
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/navigation"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="550dp"
         app:itemBackground="@color/design_default_color_background"
+
         app:itemTextColor="@drawable/selector"
-        app:menu="@menu/menu_button"
-        android:layout_alignParentBottom="true"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_button" />
 
 
 

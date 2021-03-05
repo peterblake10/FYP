@@ -11,13 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FYP">
-        <activity android:name=".ExamPapersMaths"></activity>
+        <activity
+            android:name=".Calendar"
+            android:exported="true"
+            android:parentActivityName=".Profile" />
+
+        <activity
+            android:name=".EditDetails"
+            android:exported="true"
+            android:parentActivityName=".Profile"/>
+
+        <activity
+            android:name=".ExamPapersMaths" />
         <activity
             android:name=".StudentLogin"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Tutor.TutorResources"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".WorksheetsMaths"
             android:exported="true" />
@@ -31,16 +42,18 @@
         <activity android:name=".LearningHubHome" />
         <activity
             android:name=".ColmDineen"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".DisplayTutors"/>
         <activity
             android:name=".EoinHurley"
-            android:exported="true" />
-        <activity android:name=".TutorProfile" />
+            android:exported="true"
+            android:parentActivityName=".DisplayTutors"/>
+
+        <activity
+            android:name=".TutorProfile" />
+
         <activity
             android:name=".Profile"
-            android:exported="true" />
-        <activity
-            android:name=".FindATutor"
             android:exported="true" />
         <activity
             android:name=".LearningHub"

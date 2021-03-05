@@ -28,6 +28,7 @@ public class DisplayTutors extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Find A Tutor");
         setContentView(R.layout.activity_display_tutors);
 
         lstTutor = (ListView) findViewById(R.id.lstTutor);
@@ -45,11 +46,11 @@ public class DisplayTutors extends AppCompatActivity {
             //Selecting a tutor's profile
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position ==0) {
-                    Intent intent = new Intent(view.getContext(), EoinHurley.class);
+                    Intent intent = new Intent(view.getContext(), ColmDineen.class);
                     startActivity(intent);
                 } else
                 if (position ==1) {
-                    Intent intent = new Intent(view.getContext(), ColmDineen.class);
+                    Intent intent = new Intent(view.getContext(), EoinHurley.class);
                     startActivity(intent);
                 }
 
@@ -66,7 +67,7 @@ public class DisplayTutors extends AppCompatActivity {
             public void onNavigationItemReselected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
 
-                    case R.id.FindaTutor:
+                    case R.id.DisplayTutors:
 
 
                     case R.id.LearningHub:

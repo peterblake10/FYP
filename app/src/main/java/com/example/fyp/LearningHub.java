@@ -25,16 +25,13 @@ public class LearningHub extends AppCompatActivity {
     DatabaseHelperTutor DatabaseHelperTutor;
     ArrayList<Tutor> arrayList;
     DatabaseAdapterTutor DatabaseAdapterTutor;
-    Button btnLogout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("My Tutors");
         setContentView(R.layout.activity_learning_hub);
-
-
-
 
         lstMyTutors = (ListView) findViewById(R.id.lstMyTutors);
         DatabaseHelperTutor = new DatabaseHelperTutor(this);
@@ -66,7 +63,7 @@ public class LearningHub extends AppCompatActivity {
             public void onNavigationItemReselected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
 
-                    case R.id.FindaTutor:
+                    case R.id.DisplayTutors:
                         startActivity(new Intent(getApplicationContext(), DisplayTutors.class));
                         finish();
                         overridePendingTransition(0, 0);
@@ -97,19 +94,7 @@ public class LearningHub extends AppCompatActivity {
         DatabaseAdapterTutor.notifyDataSetChanged();
     }
 
-    public void logout(View view) {
-        //this method will remove session and open login screen
-        SessionManagement sessionManagement = new SessionManagement(LearningHub.this);
-        sessionManagement.removeSession();
 
-        moveToLogin();
-    }
-
-    private void moveToLogin() {
-        Intent intent = new Intent(LearningHub.this, StudentLogin.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
 }
 
 

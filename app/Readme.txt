@@ -37,3 +37,8 @@ YouTube video for creating a login - https://www.youtube.com/watch?v=8obgNNlj3Eo
 Stack overflow forum on how to change text in action bar - https://stackoverflow.com/questions/3438276/how-to-change-the-text-on-the-action-bar
 YouTube video on how to populate a spinner - https://www.youtube.com/watch?v=on_OrrX7Nw4
 YouTube video on session id's - https://www.youtube.com/watch?v=BXejFpaEwRc
+
+**ITERATION 5**
+
+YouTube video on how to add a calendar event to Google Calendar - https://www.youtube.com/watch?v=NK_-phxyIAM
+YouTube video on how to set up back buttons in action bar - https://www.youtube.com/watch?v=FcPUFp8Qrps

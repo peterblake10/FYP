@@ -6,19 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".DisplayTutors">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FIND A TUTOR"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="25dp" />
 
 
     <ListView
         android:id="@+id/lstTutor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10.0sp"
         tools:layout_editor_absoluteX="206dp"
         tools:layout_editor_absoluteY="205dp" />
 

@@ -4,7 +4,7 @@
     <item
         android:title="Find a Tutor"
         android:icon="@drawable/findtutors_icon"
-        android:id="@+id/FindaTutor" />
+        android:id="@+id/DisplayTutors" />
 
     <item
     android:title="Learning Hub"

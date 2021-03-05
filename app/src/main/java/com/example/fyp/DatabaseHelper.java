@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.SimpleCursorAdapter;
 
 import androidx.annotation.Nullable;
+
+import com.example.fyp.Model.Student;
+
 /*
 Watched a YouTube video on how to create an SQLite Database - https://youtu.be/cp2rL3sAFmI
  */
@@ -41,7 +44,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
     // New method for inserting data https://www.youtube.com/watch?v=T0ClYrJukPA
 
     public boolean InsertUser(String name, String surname, String email, String password) {
@@ -60,19 +62,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // Function to update user - https://www.youtube.com/watch?v=PA4A9IesyCg
-//    public boolean updateUser(String id, String name, String surname, String email, String password) {
-//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-//        ContentValues contentValues = new ContentValues();
-//        contentValues.put(COL_1,id);
-//        contentValues.put(COL_2,name);
-//        contentValues.put(COL_3,surname);
-//        contentValues.put(COL_4,email);
-//        contentValues.put(COL_5,password);
-//        //Updates the arguments passed
-//        sqLiteDatabase.update(TABLE_NAME, contentValues, "ID == ?", new String[] {id});
-//        return true;
-//
-//    }
+    public boolean updateUser(String id, String name, String surname, String email, String password) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_1,id);
+        contentValues.put(COL_2,name);
+        contentValues.put(COL_3,surname);
+        contentValues.put(COL_4,email);
+        contentValues.put(COL_5,password);
+        //Updates the arguments passed
+        sqLiteDatabase.update(TABLE_NAME, contentValues, "ID == ?", new String[] {id});
+        return true;
+
+    }
 //
 //    //Function to delete user - https://www.youtube.com/watch?v=neaCUaHa2Ek
     public Integer deleteUser(String id) {
