@@ -4,17 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.fyp.Adapter.DatabaseAdapterTutor;
+import com.example.fyp.Maths.LearningHubHome;
 import com.example.fyp.Model.Tutor;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

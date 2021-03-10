@@ -30,13 +30,10 @@ public class TutorRegistration extends AppCompatActivity {
     Button btnAddTutor;
 //    Button btnDeleteTutor;
 
-    private ImageView editImage;
 
 
-    private static final int PICK_IMAGE_REQUEST = 100;
-    private Uri imageFilePath;
 
-    private Bitmap imageToStore;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +54,6 @@ public class TutorRegistration extends AppCompatActivity {
         editSubject = (EditText) findViewById(R.id.txtSubject);
     //    editId = (EditText) findViewById(R.id.txtID);
         editBio = (EditText) findViewById(R.id.txtBio) ;
-        editImage = findViewById(R.id.imageT);
 
         btnAddTutor = (Button) findViewById(R.id.btnAddTutor);
 
@@ -69,35 +65,6 @@ public class TutorRegistration extends AppCompatActivity {
 //        DeleteTutor();
     }
 
-
-    public void uploadImage(View objectView) {
-        try {
-            Intent objectIntent = new Intent();
-            objectIntent.setType("image/*");
-
-            objectIntent.setAction(Intent.ACTION_GET_CONTENT);
-            startActivityForResult(objectIntent, PICK_IMAGE_REQUEST);
-
-        } catch (Exception e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        try {
-            super.onActivityResult(requestCode, resultCode, data);
-            if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
-                imageFilePath = data.getData();
-                imageToStore = MediaStore.Images.Media.getBitmap(getContentResolver(), imageFilePath);
-
-                editImage.setImageBitmap(imageToStore);
-            }
-        } catch (Exception e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-
-        }
-    }
 
 //
 //
@@ -116,8 +83,7 @@ public class TutorRegistration extends AppCompatActivity {
                                 editEmail.getText().toString(),
                                 editPassword.getText().toString(),
                                 editSubject.getText().toString(),
-                                editBio.getText().toString(),
-                                imageToStore);
+                                editBio.getText().toString());
 
                         if (isInserted == true)
                             Toast.makeText(TutorRegistration.this, "Tutor Added", Toast.LENGTH_LONG).show();

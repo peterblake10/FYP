@@ -8,10 +8,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.fyp.Adapter.DatabaseAdapterTutor;
+import com.example.fyp.Economics.OranBergin;
+import com.example.fyp.Irish.ColmDineen;
+import com.example.fyp.Maths.EoinHurley;
 import com.example.fyp.Model.Tutor;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -51,6 +53,10 @@ public class DisplayTutors extends AppCompatActivity {
                 } else
                 if (position ==1) {
                     Intent intent = new Intent(view.getContext(), EoinHurley.class);
+                    startActivity(intent);
+                } else
+                if (position ==2) {
+                    Intent intent = new Intent(view.getContext(), OranBergin.class);
                     startActivity(intent);
                 }
 

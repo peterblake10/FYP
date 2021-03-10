@@ -7,33 +7,54 @@
     tools:context=".Profile">
 
     <TextView
+        android:id="@+id/txtMyProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
         android:text="MY PROFILE"
-        android:textSize="30dp"/>
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/image"
+        android:layout_below="@id/txtMyProfile"
+        android:src="@drawable/profile_icon"
+        android:scaleType="centerCrop"
+        android:onClick="chooseImage"/>
+
+
 
     <Button
         android:id="@+id/btnEditDetails"
-        android:onClick="UpdateDetails"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Edit My Details"
-        android:layout_marginTop="150dp"/>
+        android:textSize="20dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="20dp"/>
 
     <Button
         android:id="@+id/btnCalendar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
         android:layout_below="@+id/btnEditDetails"
-        android:text="My Calendar"/>
+        android:layout_marginBottom="20dp"
+        android:text="My Study Calendar"/>
 
     <Button
         android:id="@+id/btnLogout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnCalendar"
+        android:textSize="20dp"
         android:layout_marginBottom="100dp"
-        android:text="LogOut"/>
+        android:text="Log Out"/>
 
 
 

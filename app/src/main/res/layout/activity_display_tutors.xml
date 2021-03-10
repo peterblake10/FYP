@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="10.0sp"
+        android:divider="@android:color/holo_blue_light"
+        android:dividerHeight="1.5sp"
         tools:layout_editor_absoluteX="206dp"
         tools:layout_editor_absoluteY="205dp" />
 

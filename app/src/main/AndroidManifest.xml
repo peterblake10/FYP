@@ -11,18 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FYP">
+        <activity android:name=".Economics.OranBergin"></activity>
+        <activity
+            android:name=".OnlineLesson"
+            android:exported="true"
+            android:parentActivityName=".Maths.LearningHubHome" />
         <activity
             android:name=".Calendar"
             android:exported="true"
             android:parentActivityName=".Profile" />
-
         <activity
             android:name=".EditDetails"
             android:exported="true"
-            android:parentActivityName=".Profile"/>
-
-        <activity
-            android:name=".ExamPapersMaths" />
+            android:parentActivityName=".Profile" />
+        <activity android:name=".Maths.ExamPapersMaths" />
         <activity
             android:name=".StudentLogin"
             android:exported="true" />
@@ -30,28 +32,25 @@
             android:name=".Tutor.TutorResources"
             android:exported="true" />
         <activity
-            android:name=".WorksheetsMaths"
+            android:name=".Maths.WorksheetsMaths"
             android:exported="true" />
-        <activity android:name=".StudentResources" />
+        <activity android:name=".Maths.StudentResources" />
         <activity
             android:name=".Tutor.TutorQuestion"
             android:exported="true" />
         <activity
             android:name=".StudentQuestion"
             android:exported="true" />
-        <activity android:name=".LearningHubHome" />
+        <activity android:name=".Maths.LearningHubHome" />
         <activity
-            android:name=".ColmDineen"
+            android:name=".Irish.ColmDineen"
             android:exported="true"
-            android:parentActivityName=".DisplayTutors"/>
+            android:parentActivityName=".DisplayTutors" />
         <activity
-            android:name=".EoinHurley"
+            android:name=".Maths.EoinHurley"
             android:exported="true"
-            android:parentActivityName=".DisplayTutors"/>
-
-        <activity
-            android:name=".TutorProfile" />
-
+            android:parentActivityName=".DisplayTutors" />
+        <activity android:name=".TutorProfile" />
         <activity
             android:name=".Profile"
             android:exported="true" />

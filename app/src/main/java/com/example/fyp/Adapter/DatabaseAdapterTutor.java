@@ -65,9 +65,10 @@ public class DatabaseAdapterTutor extends BaseAdapter {
         if(s.equals("Maths")){
             imageTutor.setImageResource(R.drawable.img_0402);
         } else if(s.equals("Irish")){
-            imageTutor.setImageResource(R.drawable.teacher2);
+            imageTutor.setImageResource(R.drawable.colmpic);
+        } else if(s.equals("Economics")) {
+            imageTutor.setImageResource(R.drawable.oranpic);
         }
-
 
             return convertView;
         }

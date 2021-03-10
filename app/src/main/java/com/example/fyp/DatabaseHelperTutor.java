@@ -29,7 +29,6 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
     public static final String COL_6 = "PASSWORD";
     public static final String COL_7 = "SUBJECT";
     public static final String COL_8 = "BIO";
-    public static final String COL_9 = "IMAGE";
 
     private ByteArrayOutputStream objectByteArrayOutputStream;
     private byte[] imageInBytes;
@@ -42,7 +41,7 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,PREFIX TEXT, NAME TEXT,SURNAME TEXT, EMAIL TEXT, PASSWORD TEXT, SUBJECT TEXT, BIO TEXT, IMAGE BLOB)");
+        sqLiteDatabase.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,PREFIX TEXT, NAME TEXT,SURNAME TEXT, EMAIL TEXT, PASSWORD TEXT, SUBJECT TEXT, BIO TEXT)");
 
     }
 
@@ -52,15 +51,9 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public boolean InsertTutor(String prefix, String name, String surname, String email, String password, String subject, String bio, Bitmap image) {
+    public boolean InsertTutor(String prefix, String name, String surname, String email, String password, String subject, String bio) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
-        Bitmap imageToStoreBitmap= image;
-
-        objectByteArrayOutputStream=new ByteArrayOutputStream();
-        imageToStoreBitmap.compress(Bitmap.CompressFormat.JPEG,100,objectByteArrayOutputStream);
-
-        imageInBytes=objectByteArrayOutputStream.toByteArray();
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, prefix);
@@ -70,7 +63,6 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
         contentValues.put(COL_6, password);
         contentValues.put(COL_7, subject);
         contentValues.put(COL_8, bio);
-        contentValues.put(COL_9, imageInBytes);
 
         long result = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
         // an error returns -1
@@ -97,18 +89,16 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
 
         ArrayList<Tutor> arrayList = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT prefix, name, surname, subject, image FROM " + TABLE_NAME, null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT prefix, name, surname, subject FROM " + TABLE_NAME, null);
 
         while (cursor.moveToNext()) {
             String prefix = cursor.getString(0);
             String name = cursor.getString(1);
             String surname = cursor.getString(2);
             String subject = cursor.getString(3);
-            byte[] image = cursor.getBlob(4);
 
-            Bitmap objectBitmap=BitmapFactory.decodeByteArray(image,0,image.length);
 
-            Tutor tutor = new Tutor(prefix, name, surname, subject, objectBitmap);
+            Tutor tutor = new Tutor(prefix, name, surname, subject);
 
             arrayList.add(tutor);
 
@@ -122,7 +112,7 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
 
         ArrayList<Tutor> arrayList = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT prefix, name, surname, subject, image FROM " + TABLE_NAME + " WHERE surname = 'Hurley'", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT prefix, name, surname, subject FROM " + TABLE_NAME + " WHERE surname = 'Hurley'", null);
 
 
             while (cursor.moveToNext()) {
@@ -130,11 +120,9 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
                 String name = cursor.getString(1);
                 String surname = cursor.getString(2);
                 String subject = cursor.getString(3);
-                byte[] image = cursor.getBlob(4);
 
-                Bitmap objectBitmap=BitmapFactory.decodeByteArray(image,0,image.length);
 
-                Tutor tutor = new Tutor(prefix, name, surname, subject, objectBitmap);
+                Tutor tutor = new Tutor(prefix, name, surname, subject);
 
                 arrayList.add(tutor);
 
@@ -174,6 +162,20 @@ public class DatabaseHelperTutor extends SQLiteOpenHelper {
     public Cursor ViewCDbio() {
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME +  " WHERE surname = 'Dineen'", null);
+        return cursor;
+    }
+
+    //Display Oran Bergin's name for teacher profile
+    public Cursor ViewOB() {
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME +  " WHERE surname = 'Bergin'", null);
+        return cursor;
+    }
+
+    //Display Oran Bergin's bio for tutor profile
+    public Cursor ViewOBbio() {
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME +  " WHERE surname = 'Bergin'", null);
         return cursor;
     }
 }

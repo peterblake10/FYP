@@ -109,14 +109,7 @@
         android:inputType="textPersonName"
          />
 
-    <ImageView
-        android:id="@+id/imageT"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/upload"
-        android:scaleType="centerCrop"
-        android:onClick="uploadImage"
-        android:layout_below="@id/txtBio"/>
+
 
     <Button
         android:id="@+id/btnAddTutor"
@@ -124,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="300dp"
         android:text="Next"
-        android:layout_below="@id/imageT"
+        android:layout_below="@id/txtBio"
          />
 
     <Button
@@ -132,7 +125,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_below="@id/imageT"
+        android:layout_below="@id/txtBio"
         android:layout_marginLeft="150dp"
         android:text="Delete"
          />
@@ -141,7 +134,7 @@
         android:id="@+id/btnBack1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageT"
+        android:layout_below="@id/txtBio"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
         android:text="Back" />

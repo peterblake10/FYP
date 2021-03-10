@@ -11,16 +11,14 @@ public class Tutor {
     String name;
     String surname;
     String subject;
-    Bitmap image;
 
 
-    public Tutor(String prefix, String name, String surname, String subject, Bitmap image) {
+    public Tutor(String prefix, String name, String surname, String subject) {
 
         this.prefix = prefix;
         this.name = name;
         this.surname = surname;
         this.subject = subject;
-        this.image = image;
 
     }
 
@@ -82,12 +80,6 @@ public class Tutor {
         this.subject = subject;
     }
 
-    public Bitmap getImage() {
-        return image;
-    }
 
-    public void setImage(Bitmap image) {
-        this.image = image;
-    }
 
 }
