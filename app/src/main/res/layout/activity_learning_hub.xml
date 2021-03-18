@@ -11,7 +11,7 @@
     <ListView
         android:id="@+id/lstMyTutors"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:divider="@android:color/transparent"
         android:dividerHeight="10.0sp"
@@ -21,15 +21,18 @@
 
 
 
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_above="@+id/navigation"
+        android:background="@color/main_blue"></View>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
 
         android:layout_alignParentBottom="true"
 
-        android:layout_marginTop="550dp"
         app:itemBackground="@color/design_default_color_background"
         app:itemTextColor="@drawable/selector"
         app:layout_constraintTop_toTopOf="parent"

@@ -3,6 +3,7 @@
     package="com.example.fyp">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FYP">
-        <activity android:name=".Economics.OranBergin"></activity>
+        <activity
+            android:name=".Tutor.TutorDashboard"
+            android:exported="true"/>
+
+        <activity android:name=".Maths.EditNote" />
+        <activity
+            android:name=".Maths.NoteDetails"
+            android:label="@string/title_activity_note_details"
+            android:parentActivityName=".Maths.NotesMaths"
+            android:theme="@style/Theme.FYP.NoActionBar" />
+        <activity
+            android:name=".Maths.AddNoteMaths"
+            android:parentActivityName=".Maths.NotesMaths" />
+        <activity
+            android:name=".Maths.NotesMaths"
+            android:exported="true"
+            android:parentActivityName=".Maths.StudentResources" />
+        <activity
+            android:name=".ViewWorksheet"
+            android:exported="true"
+            android:parentActivityName=".Maths.WorksheetsMaths" />
+        <activity
+            android:name=".Economics.OranBergin"
+            android:exported="true"
+            android:parentActivityName=".DisplayTutors" />
         <activity
             android:name=".OnlineLesson"
             android:exported="true"
@@ -24,24 +49,34 @@
             android:name=".EditDetails"
             android:exported="true"
             android:parentActivityName=".Profile" />
-        <activity android:name=".Maths.ExamPapersMaths" />
+        <activity
+            android:name=".Maths.ExamPapersMaths"
+            android:parentActivityName=".Maths.StudentResources" />
         <activity
             android:name=".StudentLogin"
             android:exported="true" />
         <activity
             android:name=".Tutor.TutorResources"
+            android:parentActivityName=".Tutor.TutorDashboard"
             android:exported="true" />
         <activity
             android:name=".Maths.WorksheetsMaths"
-            android:exported="true" />
-        <activity android:name=".Maths.StudentResources" />
+            android:exported="true"
+            android:parentActivityName=".Maths.StudentResources" />
+        <activity
+            android:name=".Maths.StudentResources"
+            android:parentActivityName=".Maths.LearningHubHome" />
         <activity
             android:name=".Tutor.TutorQuestion"
+            android:parentActivityName=".Tutor.TutorDashboard"
             android:exported="true" />
         <activity
             android:name=".StudentQuestion"
-            android:exported="true" />
-        <activity android:name=".Maths.LearningHubHome" />
+            android:exported="true"
+            android:parentActivityName=".Maths.LearningHubHome" />
+        <activity
+            android:name=".Maths.LearningHubHome"
+            android:parentActivityName=".LearningHub" />
         <activity
             android:name=".Irish.ColmDineen"
             android:exported="true"

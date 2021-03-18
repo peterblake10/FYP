@@ -42,3 +42,9 @@ YouTube video on session id's - https://www.youtube.com/watch?v=BXejFpaEwRc
 
 YouTube video on how to add a calendar event to Google Calendar - https://www.youtube.com/watch?v=NK_-phxyIAM
 YouTube video on how to set up back buttons in action bar - https://www.youtube.com/watch?v=FcPUFp8Qrps
+YouTube video on how to implement cardview - https://www.youtube.com/watch?v=SD2t75T5RdY&t=1555s
+Stack Overflow how to add border to edittext field - https://stackoverflow.com/questions/44612585/how-to-add-border-to-edittext-in-
+
+**ITERATION 6**
+
+Stack Overflow on how to pass image through intent - https://stackoverflow.com/questions/11010386/passing-android-bitmap-data-within-activity-using-intent-in-android

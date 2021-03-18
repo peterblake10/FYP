@@ -85,6 +85,7 @@ public class Profile extends AppCompatActivity {
 
         Details();
         Calendar();
+        Logout();
 
     }
 //Selecting a profile picture
@@ -144,6 +145,20 @@ public class Profile extends AppCompatActivity {
             }
 
         }
+        );
+    }
+
+    public void Logout() {
+
+        btnLogout.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Profile.this, StudentLogin.class);
+                        startActivity(intent);
+                    }
+
+                }
         );
     }
 

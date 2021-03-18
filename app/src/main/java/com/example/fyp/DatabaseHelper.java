@@ -71,7 +71,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_4,email);
         contentValues.put(COL_5,password);
         //Updates the arguments passed
-        sqLiteDatabase.update(TABLE_NAME, contentValues, "ID == ?", new String[] {id});
+        sqLiteDatabase.update(TABLE_NAME, contentValues, "ID = ?", new String[]{id});
         return true;
 
     }
